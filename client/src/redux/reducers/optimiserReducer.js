@@ -119,6 +119,8 @@ export default (state = initialState, action) => {
       });
       if (state.currentIndex + 1 < state.timetables.length) {
         return {...state, currentIndex: state.currentIndex + 1};
+      } else {
+        return {...state, currentIndex: 0};
       }
       return state;
     case PREVIOUS_TIMETABLE:
@@ -128,6 +130,8 @@ export default (state = initialState, action) => {
       });
       if (state.currentIndex - 1 >= 0) {
         return {...state, currentIndex: state.currentIndex - 1};
+      } else {
+        return {...state, currentIndex: state.timetables.length - 1};
       }
       return state;
     case BEGIN_OPTIMISATION:
