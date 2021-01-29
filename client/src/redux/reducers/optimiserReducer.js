@@ -122,7 +122,6 @@ export default (state = initialState, action) => {
       } else {
         return {...state, currentIndex: 0};
       }
-      return state;
     case PREVIOUS_TIMETABLE:
       ReactGA.event({
         category: 'Timetables',
@@ -133,7 +132,6 @@ export default (state = initialState, action) => {
       } else {
         return {...state, currentIndex: state.timetables.length - 1};
       }
-      return state;
     case BEGIN_OPTIMISATION:
       return {...state, optimising: true};
     case FAIL_OPTIMISATION:
